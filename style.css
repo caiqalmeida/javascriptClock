@@ -1,0 +1,81 @@
+body,
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+html {
+  background-image: url("background.jpg");
+  background-size: cover;
+  position: relative;
+  z-index: -2;
+}
+
+html::after {
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 255, 0.2);
+  z-index: -1;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40rem;
+  width: 40rem;
+}
+
+.clock {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid rgba(0, 0, 0, 0.8);
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.pointer {
+  width: 50%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transition: all 0.01s;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.hour-pointer {
+  width: 25%;
+  top: 25%;
+  right: 50%;
+}
+
+.sec-pointer {
+  height: 1px;
+}
+
+.middle-point {
+  position: absolute;
+  border-radius: 50%;
+  top: 48.5%;
+  right: 48%;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 1;
+  ;
+}
